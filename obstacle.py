@@ -1,0 +1,9 @@
+class Obstancle:
+
+    def __init__(self):
+        ...
+
+    def move():
+        ...
+    def position():
+        ...
