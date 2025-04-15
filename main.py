@@ -29,6 +29,7 @@ class Game:
     def render(self):
         self.display.fill(self.color_display)
         self.display.blit(self.road.image,(-100,300))
+        self.display.blit(self.road.obstancle.image,(20,310))
         pygame.display.update()
          
 
