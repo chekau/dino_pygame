@@ -25,11 +25,13 @@ class Game:
 
     def update_game(self):
          ...
+        #self.road.obstancle.move()
 
     def render(self):
         self.display.fill(self.color_display)
-        self.display.blit(self.road.image,(-100,300))
-        self.display.blit(self.road.obstancle.image,(20,310))
+        self.display.blit(self.road.image,(-150,120))
+        
+        pygame.display.flip()
         pygame.display.update()
          
 
@@ -43,11 +45,7 @@ class Game:
         pygame.quit()
 
               
-        
-        
-           
 
-            
     
     
 game = Game()
