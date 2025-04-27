@@ -13,8 +13,7 @@ class Obstancle:
 
     def move(self):
         self.rect.x -= self.speed
-        # if self.rect.x == 0:
-        #     self.rect.x = 600
+        
         
     def position(self):
         ...

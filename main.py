@@ -20,6 +20,7 @@ class Game:
         self.road = Road()
 
 
+
     def process_input(self):
         for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -35,6 +36,7 @@ class Game:
         self.display.blit(self.road.image,(-150,120))
         self.display.blit(self.road.obstancle.image,(self.road.obstancle.rect.x,
                                                      self.road.obstancle.rect.y))
+        self.display.blit(self.road.dino.image,(50,250))
         
         
         pygame.display.flip()
