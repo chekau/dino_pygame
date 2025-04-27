@@ -12,7 +12,10 @@ class Road:
 
 
     
-    def add_obstancle():
-        ...
+    def add_obstancle(self):
+        if self.obstancle.rect.x == 0:
+            self.obstancle.rect.x = 600
+
+
     def closer_obstancle():
         ...

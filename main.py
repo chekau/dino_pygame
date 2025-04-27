@@ -1,4 +1,5 @@
 import pygame
+from pygame.time import Clock 
 from road import Road
 
 
@@ -14,6 +15,8 @@ class Game:
         self.display = pygame.display.set_mode((700,400))
         self.name = pygame.display.set_caption("Dino")
         self.color_display = (255,255,255)
+        self.clock = Clock()
+        self.fps = 60
         self.road = Road()
 
 
@@ -25,6 +28,7 @@ class Game:
 
     def update_game(self):
         self.road.obstancle.move()
+        self.road.add_obstancle()
 
     def render(self):
         self.display.fill(self.color_display)
@@ -32,7 +36,9 @@ class Game:
         self.display.blit(self.road.obstancle.image,(self.road.obstancle.rect.x,
                                                      self.road.obstancle.rect.y))
         
+        
         pygame.display.flip()
+        self.clock.tick(self.fps)
         pygame.display.update()
          
 
