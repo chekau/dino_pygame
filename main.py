@@ -24,12 +24,13 @@ class Game:
                     break
 
     def update_game(self):
-         ...
-        #self.road.obstancle.move()
+        self.road.obstancle.move()
 
     def render(self):
         self.display.fill(self.color_display)
         self.display.blit(self.road.image,(-150,120))
+        self.display.blit(self.road.obstancle.image,(self.road.obstancle.rect.x,
+                                                     self.road.obstancle.rect.y))
         
         pygame.display.flip()
         pygame.display.update()
