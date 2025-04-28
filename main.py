@@ -33,7 +33,9 @@ class Game:
     def update_game(self):
         self.road.obstancle.move()
         self.road.add_obstancle()
-        self.road.dino.jump()
+        
+        
+    
         
 
     def render(self):
@@ -41,7 +43,8 @@ class Game:
         self.display.blit(self.road.image,(-150,120))
         self.display.blit(self.road.obstancle.image,(self.road.obstancle.rect.x,
                                                      self.road.obstancle.rect.y))
-        self.display.blit(self.road.dino.img_rect,(50,250))
+        self.display.blit(self.road.dino.image,(self.road.dino.img_rect.x,
+                                                   self.road.dino.img_rect.y))
         
         
         pygame.display.flip()
