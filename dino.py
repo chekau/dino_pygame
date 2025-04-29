@@ -10,23 +10,26 @@ class Dino:
         self.img_rect = self.image.get_rect()
         self.img_rect.x = 50
         self.img_rect.y = 250
-        # self.vert_vel = 0
-        # self.gravity = 1
-        self.is_jump = True
-        # self.jump_max = 15
-        self.jump_count = 10
+    
+        self.is_jumping = False
+        self.y_velocity = 0
+        
 
     def jump(self):
-        if self.is_jump:
-            if self.jump_count >= -10:
-                neg = 1
-                if self.jump_count < 0:
-                    neg = -1
-                self.img_rect.y -= self.jump_count**2 * 0.1 * neg
-                self.jump_count -= 1
-            else:
-                self.is_jump = False
-                self.jump_count = 10
+        if not self.is_jumping:
+            self.y_velocity = -15  
+            self.is_jumping = True
+
+
+    def update(self):
+        if self.is_jumping:
+            self.img_rect.y += self.y_velocity
+            self.y_velocity += 1 
+
+            
+            if self.img_rect.y >=  250:  
+                self.img_rect.y = 250
+                self.is_jumping = False
 
     def crash():
         ...

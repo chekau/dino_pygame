@@ -33,6 +33,10 @@ class Game:
     def update_game(self):
         self.road.obstancle.move()
         self.road.add_obstancle()
+        self.road.dino.update()
+        pygame.display.update()
+        
+        
         
         
     
@@ -49,7 +53,8 @@ class Game:
         
         pygame.display.flip()
         self.clock.tick(self.fps)
-        pygame.display.update()
+        
+        
          
 
 
