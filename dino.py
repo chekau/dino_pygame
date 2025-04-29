@@ -17,14 +17,14 @@ class Dino:
 
     def jump(self):
         if not self.is_jumping:
-            self.y_velocity = -15  
+            self.y_velocity = -10  
             self.is_jumping = True
 
 
     def update(self):
         if self.is_jumping:
             self.img_rect.y += self.y_velocity
-            self.y_velocity += 1 
+            self.y_velocity += 0.3
 
             
             if self.img_rect.y >=  250:  
