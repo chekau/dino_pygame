@@ -1,6 +1,7 @@
 import pygame
 from pygame.time import Clock 
 from road import Road
+import random
 
 
 
@@ -12,7 +13,7 @@ class Game:
 
     def __init__(self):
         self.running = True
-        self.display = pygame.display.set_mode((700,400))
+        self.display = pygame.display.set_mode((1000,400))
         self.name = pygame.display.set_caption("Dino")
         self.color_display = (255,255,255)
         self.clock = Clock()
@@ -31,13 +32,16 @@ class Game:
                         self.road.dino.jump()
 
     def update_game(self):
-        self.road.obstancle.move()
-        self.road.add_obstancle()
         self.road.dino.update()
-        pygame.display.update()
+        self.road.update()
+        
+            
         
         
         
+        
+    def crash():
+        ...
         
     
         
@@ -45,14 +49,16 @@ class Game:
     def render(self):
         self.display.fill(self.color_display)
         self.display.blit(self.road.image,(-150,120))
-        self.display.blit(self.road.obstancle.image,(self.road.obstancle.rect.x,
-                                                     self.road.obstancle.rect.y))
+        
+        for obstacle in self.road.obstacles:  # Отрисовка всех препятствий
+            self.display.blit(obstacle.image, (obstacle.rect.x, obstacle.rect.y))
+
         self.display.blit(self.road.dino.image,(self.road.dino.img_rect.x,
                                                    self.road.dino.img_rect.y))
         
         
         pygame.display.flip()
-        self.clock.tick(self.fps)
+        
         
         
          
@@ -63,7 +69,7 @@ class Game:
             self.process_input()
             self.update_game()
             self.render()
-            
+            self.clock.tick(self.fps)
         pygame.quit()
 
               
