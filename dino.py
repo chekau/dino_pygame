@@ -12,9 +12,11 @@ class Dino:
         self.img_rect.y = 250
     
         self.is_jumping = False
-        self.moving_right = True  # Движение вправо по умолчанию
+        self.moving_right = True 
         self.y_velocity = 0
         self.speed = 2
+
+        self.score_succes_jump = 0
         
 
     def jump(self):
@@ -43,6 +45,12 @@ class Dino:
             if self.img_rect.y >=  250:  
                 self.img_rect.y = 250
                 self.is_jumping = False
+
+    def successful_jumps(self):
+        self.score_succes_jump += 1
+
+    def get_succesful_jumps(self):
+        return self.score_succes_jump
 
     def crash():
         ...

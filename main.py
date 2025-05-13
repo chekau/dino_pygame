@@ -17,8 +17,10 @@ class Game:
         self.name = pygame.display.set_caption("Dino")
         self.color_display = (255,255,255)
         self.clock = Clock()
-        self.fps = 60
+        self.fps = 70
         self.road = Road()
+        self.font = pygame.font.SysFont("TimesNewRoman",36)
+        
 
 
 
@@ -50,11 +52,13 @@ class Game:
         self.display.fill(self.color_display)
         self.display.blit(self.road.image,(-150,120))
         
-        for obstacle in self.road.obstacles:  # Отрисовка всех препятствий
+        for obstacle in self.road.obstacles:
             self.display.blit(obstacle.image, (obstacle.rect.x, obstacle.rect.y))
 
         self.display.blit(self.road.dino.image,(self.road.dino.img_rect.x,
                                                    self.road.dino.img_rect.y))
+        jump_count_text = self.font.render(f"Очки: {self.road.dino.get_succesful_jumps()}",True,(0,0,0))
+        self.display.blit(jump_count_text, (800,20))
         
         
         pygame.display.flip()

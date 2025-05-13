@@ -25,21 +25,22 @@ class Road:
 
     def update(self):
         self.spawn_timer += 1
-        if self.spawn_timer >= 60:  # Увеличьте интервал до 60 кадров
+        if self.spawn_timer >= 100:  
             self.add_obstacle()
             self.spawn_timer = 0
 
-    # Используйте новый список для удаления кактусов
+    
         active_cacti = []
         for cactus in self.obstacles:
-            cactus.move()  # Движение каждого кактуса
-        # Проверка выхода за границы
+            cactus.move()  
+        
             if cactus.rect.x >= -cactus.rect.width:
-                active_cacti.append(cactus)  # Только те, что еще на экране
+                active_cacti.append(cactus) 
             else:
-                self.score += 1  # Увеличение счёта для убранных кактусов
+                self.dino.score_succes_jump += 1 
 
-        self.obstacles = active_cacti  # Обновите список кактусов
+        self.obstacles = active_cacti
+         
 
     def closer_obstancle():
         ...
