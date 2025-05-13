@@ -18,9 +18,11 @@ class Dino:
 
         self.score_succes_jump = 0
         
+        self.alive = True
+        
 
     def jump(self):
-        if not self.is_jumping:
+        if not self.is_jumping and self.alive:
             self.y_velocity = -10  
             self.is_jumping = True
 
@@ -52,7 +54,9 @@ class Dino:
     def get_succesful_jumps(self):
         return self.score_succes_jump
 
-    def crash():
-        ...
+    def crash(self):
+        self.alive = False
+
+
     def position():
         ...

@@ -42,9 +42,7 @@ class Game:
         
         
         
-    def crash():
-        ...
-        
+    
     
         
 
@@ -57,7 +55,7 @@ class Game:
 
         self.display.blit(self.road.dino.image,(self.road.dino.img_rect.x,
                                                    self.road.dino.img_rect.y))
-        jump_count_text = self.font.render(f"Очки: {self.road.dino.get_succesful_jumps()}",True,(0,0,0))
+        jump_count_text = self.font.render(f"Score: {self.road.dino.get_succesful_jumps()}",True,(0,0,0))
         self.display.blit(jump_count_text, (800,20))
         
         

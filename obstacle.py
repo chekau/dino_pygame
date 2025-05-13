@@ -6,7 +6,7 @@ class Obstancle:
         self.obst_image = pygame.image.load(r"static\obstacle.png")
         self.image = pygame.transform.scale(self.obst_image,(100,70))
         self.rect = self.image.get_rect()
-        self.rect.x = 600
+        self.rect.x = 1000
         self.rect.y = 250
         self.speed = 6
         

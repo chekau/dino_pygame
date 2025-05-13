@@ -24,6 +24,8 @@ class Road:
         self.obstacles.append(new_obstacle)
 
     def update(self):
+        if not self.dino.alive:
+            return
         self.spawn_timer += 1
         if self.spawn_timer >= 100:  
             self.add_obstacle()
@@ -32,7 +34,12 @@ class Road:
     
         active_cacti = []
         for cactus in self.obstacles:
-            cactus.move()  
+            cactus.move()
+
+            if self.check_colision(self.dino,self.obstancle):
+                self.dino.crash()
+                break
+
         
             if cactus.rect.x >= -cactus.rect.width:
                 active_cacti.append(cactus) 
@@ -41,6 +48,9 @@ class Road:
 
         self.obstacles = active_cacti
          
+
+    def check_colision(self,dino,obstacle):
+        return dino.img_rect.colliderect(obstacle.rect)
 
     def closer_obstancle():
         ...
