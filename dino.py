@@ -57,6 +57,9 @@ class Dino:
     def crash(self):
         self.alive = False
 
+    def get_rect(self):
+        return self.img_rect
+
 
     def position():
         ...

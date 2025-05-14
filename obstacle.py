@@ -8,11 +8,16 @@ class Obstancle:
         self.rect = self.image.get_rect()
         self.rect.x = 1000
         self.rect.y = 250
+        
         self.speed = 6
         
 
     def move(self):
         self.rect.x -= self.speed
+
+
+    def get_rect(self):
+        return self.rect
         
         
     def position(self):

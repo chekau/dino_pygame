@@ -15,7 +15,7 @@ class Game:
         self.running = True
         self.display = pygame.display.set_mode((1000,400))
         self.name = pygame.display.set_caption("Dino")
-        self.color_display = (255,255,255)
+        self.color_display = (255,255,255 )
         self.clock = Clock()
         self.fps = 70
         self.road = Road()
