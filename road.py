@@ -25,8 +25,8 @@ class Road:
 
     def update(self):
         if not self.dino.alive:
-            self.display_game_over()
-            return
+            # self.display_game_over()
+            pygame.quit()
         
         
         self.spawn_timer += 1
@@ -39,8 +39,10 @@ class Road:
         for cactus in self.obstacles:
             cactus.move()
 
-            if self.check_colision():
+            if self.check_colision(self.dino,cactus):
+
                 self.dino.crash()
+                break
                 
 
             
@@ -53,14 +55,10 @@ class Road:
         self.obstacles = active_cacti
          
 
-    def check_colision(self):
-        return self.dino.get_rect().colliderect(self.obstancle.get_rect())
+    def check_colision(self,dino,obstancle):
+        return dino.get_rect().colliderect(obstancle.get_rect())
     
-    def display_game_over(self):
-        self.screen.fill((255, 0, 0))
-        game_over_text = self.font.render("Игра Окончена!", True, (255, 255, 255))
-        self.screen.blit(game_over_text, (200, 180))
-        pygame.display.flip()
+    
 
     def closer_obstancle():
         ...

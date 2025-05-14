@@ -10,6 +10,7 @@ class Dino:
         self.img_rect = self.image.get_rect()
         self.img_rect.x = 50
         self.img_rect.y = 250
+        
     
         self.is_jumping = False
         self.moving_right = True 

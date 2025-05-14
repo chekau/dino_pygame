@@ -24,6 +24,7 @@ class Game:
 
 
 
+
     def process_input(self):
         for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -39,7 +40,7 @@ class Game:
         
             
         
-        
+    
         
         
     
@@ -56,6 +57,8 @@ class Game:
         self.display.blit(self.road.dino.image,(self.road.dino.img_rect.x,
                                                    self.road.dino.img_rect.y))
         jump_count_text = self.font.render(f"Score: {self.road.dino.get_succesful_jumps()}",True,(0,0,0))
+        
+        
         self.display.blit(jump_count_text, (800,20))
         
         
