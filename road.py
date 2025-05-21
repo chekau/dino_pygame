@@ -26,7 +26,7 @@ class Road:
     def update(self):
         if not self.dino.alive:
             # self.display_game_over()
-            pygame.quit()
+            return
         
         
         self.spawn_timer += 1

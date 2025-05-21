@@ -20,12 +20,15 @@ class Dino:
         self.score_succes_jump = 0
         
         self.alive = True
+       
         
 
     def jump(self):
         if not self.is_jumping and self.alive:
             self.y_velocity = -10  
             self.is_jumping = True
+            
+            
 
     def move(self):
         if self.moving_right:
