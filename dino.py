@@ -51,5 +51,4 @@ class Dino:
     def get_rect(self):
         return self.img_rect
 
-    def position():
-        ...
+    
